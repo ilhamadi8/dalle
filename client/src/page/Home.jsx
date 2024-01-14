@@ -43,23 +43,7 @@ const Home = () => {
       setLoading(false);
     }
   };
-  fetch('http://localhost:8080/api/v1/post/65a340430477ab4ea41bf26e', {
-    method: 'DELETE',
-    headers: {
-      'Content-Type': 'application/json',
-      // Add any additional headers if needed
-    },
-  })
-    .then(response => {
-      if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
-      }
-      return response.json();
-    })
-    .then(data => {
-      console.log('Successfully deleted:', data);
-      // Handle any additional logic after successful deletion
-    })
+
   useEffect(() => {
     fetchPosts();
   }, []);
